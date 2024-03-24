@@ -1,0 +1,19 @@
+
+<body>
+<div class="user-input-section">
+  <section class="heading">
+    <div class="title"></div>
+    <div class="sub-title text-white">Generate QRCode for Client!</div>
+  </section>
+  <section class="user-input">
+    <button class="button " type="submit" (click)="generateQRCode()">Generate</button>
+  </section>
+</div>
+
+<div class="qr-code-container"  *ngIf="qrCode">
+  <div class="qr-code">
+    <img [src]="qrCode" alt="QR Code">
+  </div>
+</div>
+</body>
+
