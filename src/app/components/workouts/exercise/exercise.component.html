@@ -1,0 +1,124 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+<section class="section">
+  <div class="container">
+    <div class="justify-content-center row">
+      <div class="col-lg-12">
+        <div class="candidate-list-widgets mb-4">
+          <form  >
+            <div class="g-2 row">
+              <div class="col-lg-3">
+                <div class="filler-job-form">
+                  <i class="uil uil-briefcase-alt"></i><input id="exampleFormControlInput1" placeholder="Job, Company name... " type="search" class="form-control filler-job-input-box form-control" />
+                </div>
+              </div>
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="align-items-center row">
+          <div class="col-lg-8">
+            <div class="mb-3 mb-lg-0"><h5 class="fs-16 mb-0">Showing 1 – {{this.size}} of {{this.totalElement}} exercises</h5></div>
+          </div>
+          <div class="col-lg-4">
+            <div class="candidate-list-widgets">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="selection-widget">
+                    <select class="form-select" data-trigger="true" name="choices-single-filter-orderby" id="choices-single-filter-orderby" aria-label="Default select example">
+                      <option value="df">Default</option>
+                      <option value="ne">Newest</option>
+                      <option value="od">Oldest</option>
+                      <option value="rd">Random</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="selection-widget mt-2 mt-lg-0">
+                    <select class="form-select" data-trigger="true" name="choices-candidate-page" id="choices-candidate-page" aria-label="Default select example">
+                      <option value="df">All</option>
+                      <option value="ne">8 per Page</option>
+                      <option value="ne">12 per Page</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="candidate-list">
+
+          @for ( exo of exercises ; track exercises ){
+          <div class="candidate-list-box card mt-4">
+            <div class="p-4 card-body">
+              <div class="align-items-center row">
+                <div class="col-auto">
+                  <div class="candidate-list-images">
+                    <a ><img  [src]="returnImage(exo.exercise_image)"   class="avatar-md img-thumbnail rounded-circle" /></a>
+                  </div>
+                </div>
+                <div class="col-lg-5">
+                  <div class="candidate-list-content mt-3 mt-lg-0">
+                    <h5 class="fs-19 mb-0">
+                      <a class="primary-link" >{{exo.exercise_name}}</a><span class="badge bg-success ms-1"><i class="mdi mdi-star align-middle"></i>{{exo.rating}}</span>
+                    </h5>
+                    <p class="text-muted mb-2">{{exo.muscle_group}}</p>
+                    <ul class="list-inline mb-0 text-muted">
+                      <li class="list-inline-item"><i class="mdi mdi-weight-lifter"></i> {{exo.equipment}}</li>
+                      <li class="list-inline-item"><i class="mdi mdi-alert-octagon"></i> {{exo.description}}</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="mt-2 mt-lg-0 d-flex flex-wrap align-items-start gap-1">
+                    <span class="badge bg-soft-secondary fs-14 mt-1">Exercises</span>
+                  </div>
+                </div>
+              </div>
+              <div class="favorite-icon">
+                <a ><i class="mdi mdi-heart fs-18"></i></a>
+              </div>
+            </div>
+          </div>
+            }
+
+
+
+          <nav class="mb-5">
+            <ul class="pagination justify-content-end m-3 ">
+
+              <nav class="nav nav-pills ">
+                <button (click)="previousPage()" class="btn btn-outline-dark m-1" >Previous</button>
+
+                @for (page of [].constructor(totalPages); track totalPages ; let i = $index ){
+
+                  <button   (click)="handlePage(i+1)"
+                            class="btn m-1"
+                            [class.btn-dark]="currentPage===(i+1)"
+                            [class.btn-outline-dark]="currentPage !== (i+1)"
+                     >
+                    {{i  +1}}</button>
+              }
+
+                <button (click)="nextPage()" class="btn btn-outline-dark m-1" >Next</button>
+
+
+
+              </nav>
+
+            </ul>
+          </nav>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
