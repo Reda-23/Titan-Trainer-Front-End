@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-sm navbar-dark bg-black py-0 px-0 fixed-top">
   <a class="navbar-brand" href="/"><img id="logo" src="https://i.imgur.com/K7Nwq4V.jpg" alt="profile"> &nbsp;&nbsp;&nbsp;TitanTrainer</a>
   <span class="v-line"></span>
@@ -12,11 +13,20 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/web-shop">Web-shop</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/qrcode" >QR-code</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+          My Workouts
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/workout">Workout</a>
+          <a class="dropdown-item" routerLink="/exercise" >Exercises</a>
+
+          <a class="dropdown-item" routerLink="/favorite" >Favorites</a>
+        </div>
+
       </li>
       <li class="nav-item">
-        <a class="nav-link" >Workout</a>
+        <a class="nav-link" routerLink="/qrcode" >QR-code</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" >Book</a>
