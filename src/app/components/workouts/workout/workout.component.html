@@ -1,99 +1,61 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+<body>
 <section class="section">
   <div class="container">
-    <div class="justify-content-center row">
-      <div class="col-lg-12">
-        <div class="candidate-list-widgets mb-4">
-          <form action="#" class="">
-            <div class="g-2 row">
-              <div class="col-lg-3">
-                <div class="filler-job-form">
-                  <i class="uil uil-briefcase-alt"></i><input id="exampleFormControlInput1" placeholder="Job, Company name... " type="search" class="form-control filler-job-input-box form-control" />
-                </div>
-              </div>
 
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="row">
+    <div class="row mt-3">
       <div class="col-lg-12">
-        <div class="align-items-center row">
-          <div class="col-lg-8">
-            <div class="mb-3 mb-lg-0"><h6 class="fs-16 mb-0">Showing 1 – 8 of 11 results</h6></div>
-          </div>
-          <div class="col-lg-4">
-            <div class="candidate-list-widgets">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="selection-widget">
-                    <select class="form-select" data-trigger="true" name="choices-single-filter-orderby" id="choices-single-filter-orderby" aria-label="Default select example">
-                      <option value="df">Default</option>
-                      <option value="ne">Newest</option>
-                      <option value="od">Oldest</option>
-                      <option value="rd">Random</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="selection-widget mt-2 mt-lg-0">
-                    <select class="form-select" data-trigger="true" name="choices-candidate-page" id="choices-candidate-page" aria-label="Default select example">
-                      <option value="df">All</option>
-                      <option value="ne">8 per Page</option>
-                      <option value="ne">12 per Page</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="candidate-list">
-
+        <div class="candidate-list mt-5">
+          <ul class="nav nav-pills mt-2 d-flex justify-content-end align-items-center">
+            <li class="nav-item ">
+              <button routerLink="/addWorkout" type="button" class="btn btn-outline-light border-1 m-2"> Add Workout <span class="mdi mdi-plus-circle-outline"></span> </button>
+            </li>
+            <li class="nav-item">
+              <button type="button" routerLink="/favorite" class="btn btn-outline-light border-1 m-2"> Favorites <span class="mdi mdi-heart"></span> </button>
+            </li>
+          </ul>
           @for (workout of workouts; track workouts){
-          <div class="candidate-list-box card mt-4" >
+          <div class="candidate-list-box card mt-2" >
             <div class="p-4 card-body">
               <div class="align-items-center row">
                 <div class="col-auto">
                   <div class="candidate-list-images">
-                    <a ><img src="/assets/dumbbell.png" alt="" class="avatar-md img-thumbnail rounded-circle" /></a>
+                    <a ><img src="/assets/planner1.png" alt="workout" class="avatar-md bg-transparent" /></a>
                   </div>
                 </div>
                 <div class="col-lg-5">
                   <div class="candidate-list-content mt-3 mt-lg-0">
                     <h5 class="fs-19 mb-0">
-                      <a class="primary-link fw-bold" > {{workout.workoutName}}</a><span class="badge bg-success ms-1"><i class="mdi mdi-star align-middle"></i>4.8</span>
+                      <a class="primary-link fw-bold bg-white" > {{workout.workoutName}}</a><span [class]="returnColorBasedOnLevel(workout.level)"><i class="mdi mdi-star align-middle"></i>{{workout.level}}</span>
                     </h5>
                     <p class="text-muted mb-2 fw-medium"><i class="mdi mdi-timer"></i> {{workout.duration}}</p>
                     <ul class="list-inline mb-0 text-muted">
-                      <li class="list-inline-item"><i class="mdi mdi-note"></i> {{workout.note}}</li>
+                      <li class="list-inline-item bg-body-secondary"><i class="mdi mdi-note"></i> {{workout.note}}</li>
                     </ul>
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="mt-2 mt-lg-0 d-flex flex-wrap align-items-start gap-1">
-                    <span class="badge bg-soft-secondary fs-14 mt-1">Leader</span><span class="badge bg-soft-secondary fs-14 mt-1">Manager</span><span class="badge bg-soft-secondary fs-14 mt-1">Developer</span>
+                    <span class="badge bg-soft-secondary fs-14 mt-1"></span>
                   </div>
+
                 </div>
               </div>
-              <div class="favorite-icon">
-                <a ><i class="mdi mdi-heart fs-18"></i></a>
+
+
+              <div class="favorite-icon" >
+                <a >
+                  <i (click)="modifyFavorite(workout.workoutId)" class="mdi mdi-heart" [ngStyle]="{'color' : workout.favorite ? 'red' : '#ffffff'}"  style="cursor:pointer; font-size:30px;"></i>
+                </a>
               </div>
             </div>
           </div>
+
+
           }
-
-
-          <nav class="nav nav-pills ">
-            <button class="btn btn-outline-dark m-1" href="#">1</button>
-            <button class="btn btn-dark m-1" href="#">2</button>
-            <button class="btn btn-outline-dark m-1" href="#">3</button>
-          </nav>
-
-
   </div>
   </div>
   </div>
   </div>
 </section>
+</body>

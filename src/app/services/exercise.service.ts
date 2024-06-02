@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Exercise} from "../interfaces/Exercise";
-import {Page} from "../interfaces/Page";
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +13,37 @@ export class ExerciseService {
 
 
 
-  public getAllExercises(page : number , size : number) : Observable<Page<Exercise>> {
-    return this.http.get<Page<Exercise>>(`${this.path}/exercises?page=${page}&size=${size}`);
+  public getAllExercises() : Observable<Exercise[]> {
+    return this.http.get<Exercise[]>(`${this.path}/all`);
   }
+
+
+  public searchExercises(exerciseName : string) : Observable<Exercise[]>{
+      return this.http.get<Exercise[]>(`${this.path}/search?exerciseName=${exerciseName}`);
+  }
+
+
+  public getAllLegsExercises() : Observable<Exercise[]> {
+    return this.http.get<Exercise[]>(`${this.path}/all/legs`);
+  }
+
+
+  public getAllChestExercises() : Observable<Exercise[]> {
+    return this.http.get<Exercise[]>(`${this.path}/all/chest`);
+  }
+
+
+  public getAllArmsExercises() : Observable<Exercise[]> {
+    return this.http.get<Exercise[]>(`${this.path}/all/arms`);
+  }
+
+  public getAllBackExercises() : Observable<Exercise[]> {
+    return this.http.get<Exercise[]>(`${this.path}/all/back`);
+  }
+
+  public getAllShouldersExercises() : Observable<Exercise[]> {
+    return this.http.get<Exercise[]>(`${this.path}/all/shoulders`);
+  }
+
 
 }

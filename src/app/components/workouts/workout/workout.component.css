@@ -1,9 +1,14 @@
 body{
-  padding-top:40px;
-  background:#E6E6FA
+  height:100vh;
+  width:100%;
+  background:#000000;
+}
+section{
+  background:#000000;
 }
 .card {
-  box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+  background-image:url("/assets/workout-bg.jpg");
+  background-size:cover;
 }
 
 .avatar-md {
@@ -22,27 +27,12 @@ body{
 }
 
 a {
-  color: #02af74;
   text-decoration: none;
 }
 
 .bookmark-post .favorite-icon a, .job-box.bookmark-post .favorite-icon a {
   background-color: #da3746;
   color: #fff;
-
-}
-.favorite-icon a {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  font-size: 18px;
-  line-height: 30px;
-  text-align: center;
-  border: 1px solid #eff0f2;
-  border-radius: 6px;
-  color: rgba(173,181,189,.55);
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
 }
 
 
@@ -62,6 +52,10 @@ a {
 .mt-1 {
   margin-top: 0.25rem!important;
 }
+
+
+
+
 
 
 

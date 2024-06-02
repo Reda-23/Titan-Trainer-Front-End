@@ -1,1 +1,64 @@
-<p>favorite works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+<body>
+<section class="section">
+  <div class="container">
+    <div class="justify-content-center row">
+
+      <div class="col-lg-12">
+        <div class="candidate-list-widgets mb-4">
+          <form action="#" class="">
+            <div class="g-2 row">
+              <div class="col-lg-3">
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="nav nav-item mt-5">
+    </div>
+    <div class="row mt-1">
+      <div class="col-lg-12">
+        <div class="candidate-list mt-1">
+          @for (workout of workouts; track workouts){
+            <div class="candidate-list-box card mt-4" >
+              <div class="p-4 card-body">
+                <div class="align-items-center row">
+                  <div class="col-auto">
+                    <div class="candidate-list-images">
+                      <a ><img src="/assets/planner1.png" alt="workout" class="avatar-md bg-transparent" /></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-5">
+                    <div class="candidate-list-content mt-3 mt-lg-0">
+                      <h5 class="fs-19 mb-0">
+                        <a class="primary-link fw-bold bg-white" > {{workout.workoutName}}</a><span [class]="returnColorBasedOnLevel(workout.level)"><i class="mdi mdi-star align-middle"></i>{{workout.level}}</span>
+                      </h5>
+                      <p class="text-muted mb-2 fw-medium"><i class="mdi mdi-timer"></i> {{workout.duration}}</p>
+                      <ul class="list-inline mb-0 text-muted">
+                        <li class="list-inline-item bg-body-secondary"><i class="mdi mdi-note"></i> {{workout.note}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="mt-2 mt-lg-0 d-flex flex-wrap align-items-start gap-1">
+                      <span class="badge bg-soft-secondary fs-14 mt-1"></span>
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+              </div>
+            </div>
+
+
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>

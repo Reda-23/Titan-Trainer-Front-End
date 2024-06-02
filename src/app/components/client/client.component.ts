@@ -23,8 +23,8 @@ export class ClientComponent implements OnInit{
 
   ngOnInit(): void {
     this.clientService.getClientById(1).subscribe((data)=>{
-      console.log(data)
       this.client  = data;
+      console.log(this.client)
     });
 
   }

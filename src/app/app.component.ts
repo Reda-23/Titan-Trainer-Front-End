@@ -5,6 +5,8 @@ import {MatIcon} from "@angular/material/icon";
 import {ClientComponent} from "./components/client/client.component";
 import {NavbarComponent} from "./components/navbar/navbar.component";
 import {HomeComponent} from "./components/home/home.component";
+import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,7 @@ import {HomeComponent} from "./components/home/home.component";
   imports: [RouterOutlet, MatIcon,
     MatToolbarRow, MatToolbar, RouterLink,
     ClientComponent, NavbarComponent,
-    HomeComponent  ],
+    HomeComponent , MatPaginatorModule, FontAwesomeModule  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

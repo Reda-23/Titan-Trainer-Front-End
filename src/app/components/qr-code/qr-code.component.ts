@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {QrCodeService} from "../../services/qr-code.service";
-import { NgIf} from "@angular/common";
+import {NgClass, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-qr-code',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    NgClass
   ],
   templateUrl: './qr-code.component.html',
   styleUrl: './qr-code.component.css'

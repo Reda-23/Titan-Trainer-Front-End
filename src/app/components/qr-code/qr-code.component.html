@@ -2,11 +2,13 @@
 <body>
 <div class="user-input-section">
   <section class="heading">
-    <div class="title"></div>
-    <div class="sub-title text-white">Generate QRCode for Client!</div>
+    <div class="title ">QR-Code</div>
+    <div class="sub-title text-white">Please keep the QR-code in front of the scanner.
+
+     </div>
   </section>
   <section class="user-input">
-    <button class="button " type="submit" (click)="generateQRCode()">Generate</button>
+    <button class="button"[ngClass]="qrCode?'visually-hidden':'disabled'" type="submit" (click)="generateQRCode()">Generate </button>
   </section>
 </div>
 

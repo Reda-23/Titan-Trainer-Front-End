@@ -7,6 +7,7 @@
   width: 30px;
   height: 30px;
   border-radius: 4px;
+  zoom:120%;
 }
 
 .navbar-brand {
@@ -25,6 +26,9 @@
 
 .nav-link {
   padding-bottom: 10px;
+}
+.nav-link:hover{
+  color: whitesmoke;
 }
 
 .v-line {
@@ -47,3 +51,4 @@
     display: none;
   }
 }
+
